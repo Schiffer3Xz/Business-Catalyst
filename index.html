@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rafael Schifferli — Estratégia Comercial &amp; Crescimento na América Latina</title>
+<meta name="description" content="Executivo sênior especialista em estratégia comercial, expansão LATAM, crescimento de negócios e transformação digital. Mais de 20 anos impulsionando crescimento sustentável na América Latina." />
+<meta name="keywords" content="Rafael Schifferli, LATAM, estratégia comercial, crescimento de negócios, transformação digital, liderança B2B" />
+<meta property="og:title" content="Rafael Schifferli — Estratégia Comercial &amp; Liderança em Crescimento na LATAM" />
+<meta property="og:description" content="Engenheiro que se tornou líder de Marketing e Vendas com 20+ anos impulsionando crescimento de negócios na América Latina." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #0a1628;
+  --navy-mid: #0f2044;
+  --navy-light: #162b55;
+  --navy-accent: #1e3a6e;
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --gold-pale: #f7edcc;
+  --white: #ffffff;
+  --off-white: #f8f6f2;
+  --text-muted: #8a95a8;
+  --text-light: #c4cdd8;
+  --border: rgba(201,168,76,0.2);
+  --border-subtle: rgba(255,255,255,0.08);
+  --section-pad: clamp(60px, 8vw, 130px);
+  --container: 1160px;
+  --px: clamp(20px, 5vw, 80px);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 22px var(--px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.4s, backdrop-filter 0.4s, padding 0.3s;
+}
+
+nav.scrolled {
+  background: rgba(10,22,40,0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding-top: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 4vw, 22px);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav-logo span { color: var(--gold); }
+
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--gold); }
+
+.nav-cta {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  border: 1px solid var(--gold);
+  padding: 10px 22px;
+  transition: background 0.25s, color 0.25s;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: var(--gold); color: var(--navy); }
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 6px;
+  -webkit-tap-highlight-color: transparent;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px; height: 1.5px;
+  background: var(--white);
+  transition: all 0.3s;
+}
+.nav-hamburger.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.active span:nth-child(2) { opacity: 0; }
+.nav-hamburger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ── MOBILE MENU ── */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10,22,40,0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 99;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.mobile-menu.open { display: flex; opacity: 1; }
+.mobile-menu a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 8vw, 42px);
+  font-weight: 400;
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.25s;
+  letter-spacing: 0.02em;
+}
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-close {
+  position: absolute;
+  top: 24px; right: var(--px);
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 30px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+}
+
+/* ── HERO ── */
+#hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 100px var(--px) 0;
+  overflow: hidden;
+}
+
+.hero-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, black 20%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, black 20%, transparent 100%);
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+}
+.hero-orb-1 {
+  width: clamp(300px,60vw,600px); height: clamp(300px,60vw,600px);
+  background: radial-gradient(circle, rgba(21,60,120,0.55) 0%, transparent 70%);
+  top: -80px; right: -80px;
+}
+.hero-orb-2 {
+  width: clamp(200px,40vw,400px); height: clamp(200px,40vw,400px);
+  background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+  bottom: 120px; left: 0;
+}
+
+/* Hero inner: two-column on desktop, stacked on mobile */
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container);
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 60px;
+  align-items: flex-end;
+  padding-bottom: 60px;
+}
+
+/* Left text column */
+.hero-text { display: flex; flex-direction: column; }
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s 0.2s forwards;
+}
+.hero-eyebrow-line { width: 36px; height: 1px; background: var(--gold); }
+.hero-eyebrow span {
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold);
+}
+
+.hero-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5.2vw, 76px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin-bottom: 28px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.9s 0.4s forwards;
+}
+.hero-headline em { font-style: italic; color: var(--gold-light); }
+
+.hero-sub {
+  font-size: clamp(15px, 1.6vw, 18px);
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text-light);
+  max-width: 520px;
+  margin-bottom: 44px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s 0.6s forwards;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s 0.8s forwards;
+}
+
+/* Right image column */
+.hero-photo-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 1s 0.5s forwards;
+}
+
+.hero-photo-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+}
+
+.hero-photo-frame {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: linear-gradient(160deg, var(--navy-accent) 0%, var(--navy-light) 50%, var(--navy-mid) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative corner lines */
+.hero-photo-frame::before {
+  position: absolute;
+  top: 16px; left: 16px; right: 16px; bottom: 16px;
+  border: 1px solid rgba(201,168,76,0.15);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-photo-initials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(80px, 18vw, 140px);
+  font-weight: 300;
+  color: rgba(201,168,76,0.18);
+  user-select: none;
+  letter-spacing: -0.02em;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(teste.jpg);
+}
+
+/* Gradient fade at bottom so it bleeds into page */
+.hero-photo-frame::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 45%;
+  background: linear-gradient(to bottom, transparent, var(--navy));
+  z-index: 1;
+}
+
+/* Name badge bottom of photo */
+.hero-photo-badge {
+  position: absolute;
+  bottom: 24px; left: 20px;
+  z-index: 3;
+  padding: 14px 20px;
+  background: rgba(10,22,40,0.85);
+  border-left: 2px solid var(--gold);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.hero-photo-badge-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+}
+.hero-photo-badge-title {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 4px;
+}
+
+/* ── METRICS BAR ── */
+.hero-metrics {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border-subtle);
+  border-top: 1px solid var(--border-subtle);
+  max-width: 100%;
+  opacity: 0;
+  animation: fadeIn 1s 1.2s forwards;
+}
+
+.metric-item {
+  background: rgba(10,22,40,0.7);
+  padding: clamp(24px, 3vw, 40px) clamp(16px, 2.5vw, 36px);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+.metric-item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s ease;
+}
+.metric-item:hover { background: rgba(15,32,68,0.9); }
+.metric-item:hover::before { transform: scaleX(1); }
+
+.metric-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 3.5vw, 52px);
+  font-weight: 500;
+  color: var(--gold-light);
+  line-height: 1;
+  margin-bottom: 8px;
+  display: block;
+}
+.metric-label {
+  font-size: clamp(10px, 1.1vw, 12px);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ── SHARED ── */
+section { padding: var(--section-pad) var(--px); position: relative; z-index: 1; }
+
+.container { max-width: var(--container); margin: 0 auto; width: 100%; }
+
+.section-label {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 18px;
+}
+.section-label-line { width: 28px; height: 1px; background: var(--gold); flex-shrink: 0; }
+.section-label span {
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold);
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 4vw, 58px);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.section-title em { font-style: italic; color: var(--gold-light); }
+
+.gold-divider {
+  width: 100%; height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  opacity: 0.25;
+}
+
+/* ── BUTTONS ── */
+.btn-primary {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  text-decoration: none;
+  padding: 16px 36px;
+  transition: background 0.25s, transform 0.2s;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-primary:active { transform: translateY(0); }
+
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 10px;
+  color: var(--text-light);
+  font-size: 13px; font-weight: 400;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: color 0.25s;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-secondary:hover { color: var(--gold); }
+.btn-secondary svg { transition: transform 0.25s; }
+.btn-secondary:hover svg { transform: translateX(4px); }
+
+/* ── ABOUT ── */
+#about { background: var(--navy-mid); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+
+.about-visual { position: relative; }
+.about-img-wrap { position: relative; aspect-ratio: 4/5; overflow: visible; }
+
+.about-img-placeholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(teste.jpg);
+}
+.about-img-placeholder::after {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(70px, 12vw, 120px);
+  font-weight: 300;
+  color: rgba(201,168,76,0.18);
+  position: absolute;
+}
+
+.about-badge {
+  position: absolute;
+  bottom: 18px; left: -18px;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 14px 20px;
+  width: clamp(140px, 18vw, 180px);
+}
+.about-badge-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 4vw, 42px);
+  font-weight: 600;
+  line-height: 1; display: block;
+}
+.about-badge-text {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.about-p {
+  font-size: clamp(14px, 1.5vw, 16px);
+  font-weight: 300; line-height: 1.85;
+  color: var(--text-light);
+  margin-bottom: 18px;
+}
+.about-divider { width: 36px; height: 1px; background: var(--gold); margin: 28px 0; }
+
+.about-qualities { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.quality-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--border-subtle);
+  transition: border-color 0.25s;
+}
+.quality-item:hover { border-color: var(--border); }
+.quality-icon {
+  width: 6px; height: 6px;
+  background: var(--gold); border-radius: 50%;
+  margin-top: 7px; flex-shrink: 0;
+}
+.quality-text { font-size: 13px; font-weight: 400; color: var(--text-light); line-height: 1.5; }
+
+/* ── ACHIEVEMENTS ── */
+#achievements { background: var(--navy); position: relative; overflow: hidden; }
+#achievements::before {
+  content: '';
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.achievements-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 80px);
+  align-items: end;
+  margin-bottom: clamp(48px, 6vw, 80px);
+}
+.achievements-right-text {
+  font-size: clamp(14px, 1.4vw, 15px);
+  font-weight: 300; line-height: 1.9;
+  color: var(--text-muted);
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-subtle);
+}
+.achievement-card {
+  background: rgba(10,22,40,0.85);
+  padding: clamp(28px, 4vw, 48px) clamp(20px, 3vw, 40px);
+  position: relative; transition: background 0.3s; overflow: hidden;
+}
+.achievement-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: var(--gold);
+  transition: width 0.5s ease;
+}
+.achievement-card:hover { background: rgba(15,32,68,0.95); }
+.achievement-card:hover::after { width: 100%; }
+
+.achievement-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 5vw, 70px);
+  font-weight: 500;
+  color: var(--gold-light);
+  line-height: 1; display: block;
+  margin-bottom: 12px;
+}
+.achievement-label {
+  font-size: clamp(12px, 1.2vw, 13px);
+  font-weight: 400; color: var(--text-muted); line-height: 1.6;
+}
+
+/* ── CAREER ── */
+#career { background: var(--navy-mid); }
+
+.career-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 3vw, 48px); }
+
+.career-card {
+  border: 1px solid var(--border-subtle);
+  padding: clamp(32px, 4vw, 56px) clamp(24px, 3.5vw, 48px);
+  position: relative; transition: border-color 0.3s;
+  background: rgba(10,22,40,0.4);
+}
+.career-card:hover { border-color: var(--border); }
+.career-card-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(60px, 9vw, 100px);
+  font-weight: 300;
+  color: rgba(201,168,76,0.06);
+  position: absolute; top: 16px; right: 24px;
+  line-height: 1; pointer-events: none; user-select: none;
+}
+.career-company {
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 14px;
+}
+.career-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px, 2.5vw, 34px);
+  font-weight: 400; line-height: 1.2;
+  margin-bottom: 28px;
+}
+.career-achievements { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.career-achievements li {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: clamp(13px, 1.3vw, 14px);
+  font-weight: 300; color: var(--text-light); line-height: 1.6;
+}
+.career-achievements li::before {
+  content: ''; width: 18px; height: 1px;
+  background: var(--gold); margin-top: 12px; flex-shrink: 0;
+}
+
+/* ── EXPERTISE ── */
+#expertise { background: var(--navy); }
+
+.expertise-layout {
+  display: grid; grid-template-columns: 1fr 2fr;
+  gap: clamp(40px, 6vw, 80px); align-items: start;
+}
+.expertise-desc {
+  font-size: clamp(13px, 1.4vw, 15px);
+  font-weight: 300; line-height: 1.85; color: var(--text-muted);
+}
+.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.skill-pill {
+  padding: clamp(14px, 1.8vw, 18px) clamp(14px, 1.8vw, 22px);
+  border: 1px solid var(--border-subtle);
+  font-size: clamp(12px, 1.2vw, 13px);
+  font-weight: 400; color: var(--text-light);
+  letter-spacing: 0.04em; cursor: default;
+  transition: all 0.25s; position: relative; overflow: hidden;
+}
+.skill-pill::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(201,168,76,0.08) 0%, transparent 100%);
+  opacity: 0; transition: opacity 0.25s;
+}
+.skill-pill:hover { border-color: var(--border); color: var(--gold-light); }
+.skill-pill:hover::before { opacity: 1; }
+
+/* ── VISION ── */
+#vision { background: var(--navy-mid); text-align: center; position: relative; overflow: hidden; }
+#vision::before {
+  content: '';
+  position: absolute; top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 1px; height: 70px;
+  background: linear-gradient(to bottom, transparent, var(--gold));
+}
+#vision::after {
+  content: '';
+  position: absolute; bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 1px; height: 70px;
+  background: linear-gradient(to top, transparent, var(--gold));
+}
+.vision-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px, 3.5vw, 50px);
+  font-weight: 400; font-style: italic;
+  line-height: 1.38; max-width: 860px;
+  margin: 0 auto 44px;
+  color: var(--off-white);
+}
+.vision-quote strong { font-style: normal; color: var(--gold-light); font-weight: 500; }
+.vision-mba {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: rgba(201,168,76,0.07);
+  border: 1px solid var(--border);
+  padding: 14px 28px;
+  font-size: 13px; font-weight: 400;
+  letter-spacing: 0.06em; color: var(--gold-light);
+}
+.vision-mba svg { opacity: 0.7; flex-shrink: 0; }
+
+/* ── CONTACT ── */
+#contact { background: var(--navy); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px, 6vw, 80px); align-items: start; }
+.contact-p {
+  font-size: clamp(14px, 1.5vw, 16px);
+  font-weight: 300; line-height: 1.8;
+  color: var(--text-muted); margin-bottom: 44px;
+}
+.contact-links { display: flex; flex-direction: column; gap: 0; }
+.contact-link {
+  display: flex; align-items: center; gap: 16px;
+  text-decoration: none; color: var(--text-light);
+  font-size: clamp(14px, 1.5vw, 15px);
+  font-weight: 300; transition: color 0.25s;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  -webkit-tap-highlight-color: transparent;
+}
+.contact-link:first-child { border-top: 1px solid var(--border-subtle); }
+.contact-link:hover { color: var(--gold); }
+.contact-link-icon {
+  width: 42px; height: 42px;
+  border: 1px solid var(--border-subtle);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.25s, background 0.25s;
+}
+.contact-link:hover .contact-link-icon { border-color: var(--gold); background: rgba(201,168,76,0.07); }
+.contact-link-meta { display: flex; flex-direction: column; gap: 3px; }
+.contact-link-type { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); }
+
+.contact-form { display: flex; flex-direction: column; gap: 18px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+.form-group label {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--text-muted);
+}
+.form-group input, .form-group textarea {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border-subtle);
+  color: var(--white);
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px; font-weight: 300;
+  padding: 14px 16px;
+  transition: border-color 0.25s;
+  outline: none; resize: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+.form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-muted); }
+.form-group input:focus, .form-group textarea:focus { border-color: var(--gold); }
+.form-group textarea { height: 110px; }
+
+.form-submit {
+  background: var(--gold);
+  color: var(--navy); border: none;
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  padding: 18px 36px;
+  cursor: pointer; transition: background 0.25s, transform 0.2s;
+  align-self: flex-start;
+  -webkit-tap-highlight-color: transparent;
+}
+.form-submit:hover { background: var(--gold-light); transform: translateY(-2px); }
+.form-submit:active { transform: translateY(0); }
+
+/* ── FOOTER ── */
+footer {
+  background: rgba(5,12,24,0.85);
+  border-top: 1px solid var(--border-subtle);
+  padding: clamp(28px, 4vw, 40px) var(--px);
+  display: flex; align-items: center;
+  justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  position: relative; z-index: 1;
+}
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 500;
+  color: var(--text-muted);
+}
+.footer-logo span { color: var(--gold); }
+.footer-copy { font-size: 12px; font-weight: 300; color: var(--text-muted); letter-spacing: 0.04em; }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.85s ease, transform 0.85s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { to { opacity: 1; } }
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+::-webkit-scrollbar-thumb { background: var(--navy-accent); }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* ═══════════════════════════════════
+   RESPONSIVE — TABLET (≤ 1024px)
+═══════════════════════════════════ */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr 340px; gap: 40px; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .expertise-layout { grid-template-columns: 1fr 1.6fr; }
+}
+
+/* ═══════════════════════════════════
+   RESPONSIVE — MOBILE (≤ 768px)
+═══════════════════════════════════ */
+@media (max-width: 768px) {
+  :root { --section-pad: clamp(52px, 10vw, 80px); }
+
+  /* Nav */
+  .nav-links, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+
+  /* Hero: stacked, photo on top */
+  #hero {
+    padding-top: 80px;
+    padding-bottom: 0;
+    min-height: auto;
+    flex-direction: column;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-bottom: 0;
+    align-items: stretch;
+  }
+
+  /* Photo moves to top, text below */
+  .hero-text { order: 2; padding-bottom: clamp(40px, 8vw, 60px); }
+  .hero-photo-col { order: 1; margin: 0 calc(-1 * var(--px)); }
+
+  .hero-photo-wrap { max-width: 100%; }
+
+  .hero-photo-frame {
+    aspect-ratio: 4/3;
+    width: 100%;
+  }
+
+  .hero-photo-frame::after {
+    height: 55%;
+    background: linear-gradient(to bottom, transparent 0%, var(--navy) 100%);
+  }
+
+  .hero-photo-accent { display: none; }
+
+  .hero-photo-badge {
+    bottom: 20px; left: var(--px);
+  }
+  .hero-photo-badge-name { font-size: 20px; }
+
+  .hero-eyebrow { margin-top: -24px; margin-bottom: 20px; }
+  .hero-headline { font-size: clamp(32px, 8.5vw, 48px); margin-bottom: 18px; }
+  .hero-sub { font-size: 15px; margin-bottom: 32px; }
+  .hero-actions { gap: 16px; }
+
+  /* Metrics: 2×2 grid */
+  .hero-metrics { grid-template-columns: repeat(2, 1fr); }
+  .metric-item { padding: 22px 18px; }
+  .metric-number { font-size: 34px; }
+  .metric-label { font-size: 11px; }
+
+  /* About */
+  .about-grid { grid-template-columns: 1fr; gap: 0; }
+  .about-visual {
+    margin: 0 calc(-1 * var(--px));
+    margin-bottom: 0;
+  }
+  .about-img-wrap { aspect-ratio: 16/9; }
+  .about-img-placeholder::after { font-size: 80px; }
+  .about-badge {
+    left: var(--px); bottom: 16px;
+    width: 150px; padding: 12px 16px;
+  }
+  .about-badge-num { font-size: 30px; }
+  .about-img-frame { display: none; }
+
+  .about-text { padding-top: clamp(32px, 6vw, 48px); }
+  .about-qualities { grid-template-columns: 1fr; gap: 10px; }
+
+  /* Achievements */
+  .achievements-intro { grid-template-columns: 1fr; gap: 20px; }
+  .achievements-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Career */
+  .career-grid { grid-template-columns: 1fr; gap: 20px; }
+
+  /* Expertise */
+  .expertise-layout { grid-template-columns: 1fr; gap: 32px; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .skill-pill { padding: 13px 14px; font-size: 12px; }
+
+  /* Vision */
+  .vision-quote { font-size: clamp(20px, 5.5vw, 30px); }
+  .vision-mba { font-size: 12px; padding: 12px 20px; text-align: center; flex-direction: column; gap: 8px; }
+
+  /* Contact */
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .form-row { grid-template-columns: 1fr; gap: 14px; }
+  .form-submit { width: 100%; text-align: center; padding: 18px; }
+
+  /* Footer */
+  footer { flex-direction: column; text-align: center; gap: 8px; }
+}
+
+/* ═══════════════════════════════════
+   RESPONSIVE — SMALL MOBILE (≤ 420px)
+═══════════════════════════════════ */
+@media (max-width: 420px) {
+  .achievements-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+  .achievement-num { font-size: 44px; }
+  .hero-photo-badge-name { font-size: 18px; }
+  .hero-photo-badge-title { font-size: 10px; }
+  .mobile-menu a { font-size: 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── MOBILE MENU ── -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMobileMenu()" aria-label="Fechar menu">×</button>
+  <a href="#sobre" onclick="closeMobileMenu()">Sobre</a>
+  <a href="#conquistas" onclick="closeMobileMenu()">Conquistas</a>
+  <a href="#carreira" onclick="closeMobileMenu()">Carreira</a>
+  <a href="#expertise" onclick="closeMobileMenu()">Expertise</a>
+  <a href="#visao" onclick="closeMobileMenu()">Visão</a>
+  <a href="#contato" onclick="closeMobileMenu()">Contato</a>
+</div>
+
+<!-- ── NAV ── -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">Rafael <span>Schifferli</span></a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#conquistas">Conquistas</a></li>
+    <li><a href="#carreira">Carreira</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#visao">Visão</a></li>
+  </ul>
+  <a href="#contato" class="nav-cta">Entre em Contato</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu" onclick="toggleMobileMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+
+  <div class="hero-inner">
+
+    <!-- TEXT -->
+    <div class="hero-text">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span>Estratégia Comercial &amp; Crescimento na LATAM</span>
+      </div>
+
+      <h1 class="hero-headline">
+        Transformando Desafios em<br>
+        <em>Crescimento Sustentável</em><br>
+        na América Latina
+      </h1>
+
+      <p class="hero-sub">
+        Engenheiro que se tornou líder de Marketing e Vendas com mais de 20 anos
+        de experiência impulsionando crescimento de negócios, expansão de mercado
+        e transformação digital em toda a América Latina.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#conquistas" class="btn-primary">Ver Meu Impacto</a>
+        <a href="#contato" class="btn-secondary">
+          Vamos Conversar
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- PHOTO -->
+    <div class="hero-photo-col">
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-frame">
+          <div class="hero-photo-initials"></div>
+        </div>
+        <div class="hero-photo-badge">
+          <div class="hero-photo-badge-name">Rafael Schifferli</div>
+          <div class="hero-photo-badge-title">Executivo Sênior · LATAM</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- METRICS BAR -->
+  <div class="hero-metrics">
+    <div class="metric-item">
+      <span class="metric-number">20<span style="font-size:0.58em;color:var(--gold)">+</span></span>
+      <div class="metric-label">Anos de Liderança<br>Executiva</div>
+    </div>
+    <div class="metric-item">
+      <span class="metric-number">5</span>
+      <div class="metric-label">Mercados LATAM<br>Expandidos</div>
+    </div>
+    <div class="metric-item">
+      <span class="metric-number">13<span style="font-size:0.5em;color:var(--gold)">×</span></span>
+      <div class="metric-label">Crescimento de<br>Receita em 24 Meses</div>
+    </div>
+    <div class="metric-item">
+      <span class="metric-number">50<span style="font-size:0.58em;color:var(--gold)">%</span></span>
+      <div class="metric-label">Expansão da<br>Base de Clientes</div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ── SOBRE ── -->
+<section id="sobre">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-img-wrap">
+          <div class="about-img-placeholder"></div>
+          <div class="about-img-frame"></div>
+        </div>
+        <div class="about-badge">
+          <span class="about-badge-num">20+</span>
+          <span class="about-badge-text">Anos de Excelência</span>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <div class="section-label reveal">
+          <div class="section-label-line"></div>
+          <span>Sobre Rafael</span>
+        </div>
+
+        <h2 class="section-title reveal reveal-delay-1">
+          Onde Precisão Técnica<br>Encontra <em>Visão Comercial</em>
+        </h2>
+
+        <p class="about-p reveal reveal-delay-2">
+          Rafael Schifferli é um perfil raro no cenário executivo atual — um engenheiro
+          que evoluiu para se tornar um líder comercial de alta performance. Essa combinação
+          única lhe confere uma capacidade extraordinária de conectar os mundos de produto,
+          operações e crescimento de mercado com clareza e convicção.
+        </p>
+
+        <p class="about-p reveal reveal-delay-2">
+          Ao longo de duas décadas, Rafael construiu e liderou equipes, abriu novos mercados
+          e gerou crescimento transformador de receita para empresas industriais e B2B em
+          toda a América Latina. Sua abordagem é analítica, mas profundamente humana —
+          orientada por dados, movida por pessoas.
+        </p>
+
+        <div class="about-divider reveal reveal-delay-3"></div>
+
+        <div class="about-qualities reveal reveal-delay-3">
+          <div class="quality-item">
+            <div class="quality-icon"></div>
+            <div class="quality-text">Pensador estratégico com capacidade de execução hands-on</div>
+          </div>
+          <div class="quality-item">
+            <div class="quality-icon"></div>
+            <div class="quality-text">Liderança multicultural em mercados da LATAM</div>
+          </div>
+          <div class="quality-item">
+            <div class="quality-icon"></div>
+            <div class="quality-text">Tomada de decisão orientada por dados em escala</div>
+          </div>
+          <div class="quality-item">
+            <div class="quality-icon"></div>
+            <div class="quality-text">Rigor de engenharia aplicado à estratégia comercial</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ── CONQUISTAS ── -->
+<section id="conquistas">
+  <div class="container">
+    <div class="achievements-intro">
+      <div>
+        <div class="section-label reveal">
+          <div class="section-label-line"></div>
+          <span>Resultados Comprovados</span>
+        </div>
+        <h2 class="section-title reveal reveal-delay-1">
+          Resultados que<br><em>Falam por Si</em>
+        </h2>
+      </div>
+      <p class="achievements-right-text reveal reveal-delay-2">
+        Em uma carreira definida por metas ambiciosas e execução disciplinada, Rafael
+        entregou consistentemente resultados mensuráveis que redefinem a trajetória das
+        organizações que lidera. Não são projeções — são resultados reais, construídos
+        com estratégia, liderança e foco incansável em crescimento sustentável.
+      </p>
+    </div>
+
+    <div class="achievements-grid">
+      <div class="achievement-card reveal">
+        <span class="achievement-num">R$4M</span>
+        <div class="achievement-label">Receita mensal alcançada — partindo de R$300K — em apenas 24 meses de liderança estratégica</div>
+      </div>
+      <div class="achievement-card reveal reveal-delay-1">
+        <span class="achievement-num">5</span>
+        <div class="achievement-label">Mercados LATAM expandidos: Chile, Argentina, Bolívia, Paraguai e Colômbia</div>
+      </div>
+      <div class="achievement-card reveal reveal-delay-2">
+        <span class="achievement-num">50%</span>
+        <div class="achievement-label">Crescimento da base total de clientes por meio de desenvolvimento estratégico de canais</div>
+      </div>
+      <div class="achievement-card reveal reveal-delay-3">
+        <span class="achievement-num">30%</span>
+        <div class="achievement-label">Redução em atrasos logísticos com otimização da cadeia de suprimentos e redesenho de processos</div>
+      </div>
+      <div class="achievement-card reveal reveal-delay-4">
+        <span class="achievement-num">25%</span>
+        <div class="achievement-label">Melhoria na retenção de clientes por meio de modelos de serviço aprimorados e programas de fidelidade</div>
+      </div>
+      <div class="achievement-card reveal reveal-delay-5">
+        <span class="achievement-num">120%</span>
+        <div class="achievement-label">Crescimento de receita entregue através de transformação digital e iniciativas de reposicionamento de marca</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ── CARREIRA ── -->
+<section id="carreira">
+  <div class="container">
+    <div class="section-label reveal">
+      <div class="section-label-line"></div>
+      <span>Impacto na Carreira</span>
+    </div>
+    <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:clamp(40px,5vw,64px)">
+      Um Histórico Construído sobre<br><em>Liderança Transformadora</em>
+    </h2>
+
+    <div class="career-grid">
+      <div class="career-card reveal">
+        <div class="career-card-num">01</div>
+        <div class="career-company">Levorin Industrial</div>
+        <h3 class="career-title">De R$50M a R$100M — Dobrando o Negócio</h3>
+        <ul class="career-achievements">
+          <li>Dobrou a receita anual de R$50M para R$100M por meio de estratégia comercial disciplinada e reestruturação da equipe</li>
+          <li>Liderou a expansão LATAM de ponta a ponta em cinco mercados estratégicos, estabelecendo redes de distribuidores regionais</li>
+          <li>Desenvolveu arquitetura estratégica de canais que criou vantagens competitivas sustentáveis nos principais segmentos</li>
+          <li>Construiu e mentorou equipe comercial de alta performance com 30+ profissionais em diversas geografias</li>
+        </ul>
+      </div>
+
+      <div class="career-card reveal reveal-delay-2">
+        <div class="career-card-num">02</div>
+        <div class="career-company">Evasola / Gumix</div>
+        <h3 class="career-title">Transformação Digital e Crescimento de 120% na Receita</h3>
+        <ul class="career-achievements">
+          <li>Entregou 120% de crescimento de receita redesenhando toda a estratégia go-to-market e a infraestrutura digital de vendas</li>
+          <li>Orquestrou iniciativas de transformação digital que modernizaram o engajamento com clientes e as operações internas</li>
+          <li>Alcançou aumento de 70% na preferência de marca por meio de reposicionamento estratégico e programas de experiência do cliente</li>
+          <li>Pioneiro em frameworks de marketing orientados por dados que reduziram o custo de aquisição de clientes em mais de 35%</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ── EXPERTISE ── -->
+<section id="expertise">
+  <div class="container">
+    <div class="expertise-layout">
+      <div class="expertise-intro">
+        <div class="section-label reveal">
+          <div class="section-label-line"></div>
+          <span>Áreas de Expertise</span>
+        </div>
+        <h2 class="section-title reveal reveal-delay-1">
+          Um Espectro<br>Completo de<br><em>Habilidades Estratégicas</em>
+        </h2>
+        <p class="expertise-desc reveal reveal-delay-2">
+          Rafael traz um conjunto de competências único e integrado — da estratégia
+          de alto nível à execução do dia a dia — que o habilita a atuar com eficácia
+          em todos os níveis de uma organização.
+        </p>
+      </div>
+
+      <div class="skills-grid reveal reveal-delay-2">
+        <div class="skill-pill">Estratégia Comercial</div>
+        <div class="skill-pill">Expansão LATAM</div>
+        <div class="skill-pill">Transformação Digital</div>
+        <div class="skill-pill">Crescimento de Receita</div>
+        <div class="skill-pill">Negociação B2B</div>
+        <div class="skill-pill">Estratégia de Marca</div>
+        <div class="skill-pill">Planejamento Estratégico</div>
+        <div class="skill-pill">Contas Internacionais</div>
+        <div class="skill-pill">Liderança de Equipes</div>
+        <div class="skill-pill">Análise de Mercado</div>
+        <div class="skill-pill">Gestão de P&amp;L</div>
+        <div class="skill-pill">Liderança Intercultural</div>
+        <div class="skill-pill">IA para Negócios</div>
+        <div class="skill-pill">Otimização de Supply Chain</div>
+        <div class="skill-pill">Retenção de Clientes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ── VISÃO ── -->
+<section id="visao">
+  <div class="container" style="max-width:900px">
+    <div class="section-label reveal" style="justify-content:center;margin-bottom:clamp(40px,5vw,64px)">
+      <div class="section-label-line"></div>
+      <span>Filosofia de Liderança</span>
+      <div class="section-label-line"></div>
+    </div>
+
+    <p class="vision-quote reveal reveal-delay-1">
+      "O crescimento nunca é acidental. É fruto de <strong>inovação disciplinada</strong>,
+      profundo entendimento das pessoas e a coragem de tomar <strong>decisões orientadas
+      por dados</strong> quando todos hesitam."
+    </p>
+
+    <div style="display:flex;justify-content:center;margin-bottom:44px" class="reveal reveal-delay-2">
+      <div class="vision-mba">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+        </svg>
+        MBA em Inteligência Artificial para Negócios
+      </div>
+    </div>
+
+    <p class="about-p reveal reveal-delay-3" style="text-align:center;max-width:680px;margin:0 auto">
+      Com um MBA com especialização em Inteligência Artificial para Negócios, Rafael
+      posiciona-se na interseção entre estratégia e tecnologia emergente — preparado
+      para conduzir organizações pela complexidade da transformação moderna com
+      visão e fluência técnica.
+    </p>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ── CONTATO ── -->
+<section id="contato">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <div class="section-label reveal">
+          <div class="section-label-line"></div>
+          <span>Vamos Conversar</span>
+        </div>
+        <h2 class="section-title reveal reveal-delay-1">
+          Pronto para Construir<br><em>Algo Extraordinário?</em>
+        </h2>
+        <p class="contact-p reveal reveal-delay-2">
+          Seja para explorar uma parceria estratégica, buscar consultoria executiva
+          ou montar uma equipe para expansão na LATAM — Rafael está pronto para
+          atuar no mais alto nível.
+        </p>
+
+        <div class="contact-links reveal reveal-delay-3">
+          <a href="mailto:rafael.ai@outlook.com" class="contact-link">
+            <div class="contact-link-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="contact-link-meta">
+              <span class="contact-link-type">E-mail</span>
+              rafael.ai@outlook.com
+            </div>
+          </a>
+
+          <a href="tel:+5519999491399" class="contact-link">
+            <div class="contact-link-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.87 2.18 2 2 0 012.87 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/>
+              </svg>
+            </div>
+            <div class="contact-link-meta">
+              <span class="contact-link-type">Telefone</span>
+              +55 19 99949-1399
+            </div>
+          </a>
+
+          <a href="https://instagram.com/schifferlirafael" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-link-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="3.5"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+            <div class="contact-link-meta">
+              <span class="contact-link-type">Instagram</span>
+              @schifferlirafael
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form reveal reveal-delay-2">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nome</label>
+            <input type="text" placeholder="João" autocomplete="given-name" />
+          </div>
+          <div class="form-group">
+            <label>Sobrenome</label>
+            <input type="text" placeholder="Silva" autocomplete="family-name" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>E-mail</label>
+          <input type="email" placeholder="joao@empresa.com.br" autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label>Empresa</label>
+          <input type="text" placeholder="Sua Empresa" autocomplete="organization" />
+        </div>
+        <div class="form-group">
+          <label>Mensagem</label>
+          <textarea placeholder="Fale sobre seu projeto ou oportunidade..."></textarea>
+        </div>
+        <button class="form-submit" onclick="handleSubmit(event)">Enviar Mensagem</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo">Rafael <span>Schifferli</span></div>
+  <div class="footer-copy">© 2025 Rafael Schifferli · Estratégia Comercial &amp; Liderança em Crescimento LATAM</div>
+  <div class="footer-copy">Campinas, São Paulo — Brasil</div>
+</footer>
+
+<script>
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
+
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const btn = document.getElementById('hamburger');
+  const open = menu.classList.toggle('open');
+  btn.classList.toggle('active', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+
+function closeMobileMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Close menu on outside tap
+document.getElementById('mobileMenu').addEventListener('click', function(e) {
+  if (e.target === this) closeMobileMenu();
+});
+
+// Scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+revealEls.forEach(el => obs.observe(el));
+
+// Form submit
+function handleSubmit(e) {
+  const btn = e.target;
+  btn.textContent = 'Mensagem Enviada ✓';
+  btn.style.background = '#2d5a27';
+  btn.style.color = '#a8e6a3';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = 'Enviar Mensagem';
+    btn.style.background = '';
+    btn.style.color = '';
+    btn.disabled = false;
+  }, 3500);
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const offset = 70;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+</body>
+</html>
